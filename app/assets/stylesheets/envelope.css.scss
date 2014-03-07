@@ -1,0 +1,29 @@
+ul.envelopes
+{
+  li
+  {
+    .money
+    {
+      display: block;
+    }
+
+    .money_edit
+    {
+      display: none;
+    }
+  }
+
+  li.edit
+  {
+
+    .money
+    {
+      display: none;
+    }
+
+    .money_edit
+    {
+      display: block;
+    }
+  }
+}

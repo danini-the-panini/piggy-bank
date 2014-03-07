@@ -1,5 +1,9 @@
 .name = context.name
 .money = context.amount
+.money_edit
+  input type="text" value="#{context.amount}"
+  button.submit_collect Done
 .date = context.date
 button.collect Collect
+button.empty Empty
 / TODO: make date also reflect the period by truncating it somehow...

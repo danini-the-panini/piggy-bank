@@ -18,10 +18,32 @@ class RailsThing.Views.Envelope extends Backbone.View
   unrender: =>
     $(@el).remove()
 
-  transferToWad: ->
+  collect: ->
+    $(@el).addClass('edit')
+    @$('input').focus()
+
+  doneCollecting: ->
+    if @transferIntoWad(parseInt @$('input').val())
+      $(@el).removeClass('edit')
+    else
+      # do something?
+      alert "Too Much Money!"
+      @$('input').val(@model.get 'amount').focus()
+
+  emptyIntoWad: ->
     window.wad.set 
       amount: window.wad.get('amount') + @model.get('amount')
     @model.destroy()
 
+  transferIntoWad: (amount) ->
+    if @model.get('amount') >= amount
+      @model.set('amount', @model.get('amount') - amount)
+      window.wad.set('amount', window.wad.get('amount') + amount)
+      true
+    else
+      false
+
   events:
-    'click .collect': 'transferToWad'
+    'click .empty': 'emptyIntoWad'
+    'click .collect': 'collect'
+    'click .submit_collect': 'doneCollecting'
