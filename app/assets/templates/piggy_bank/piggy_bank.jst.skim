@@ -1,0 +1,4 @@
+.piggy
+  h2
+    | Piggy:
+    = context.amount

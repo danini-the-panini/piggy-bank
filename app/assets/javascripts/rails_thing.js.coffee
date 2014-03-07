@@ -10,6 +10,9 @@ window.RailsThing =
       success()
 
     app_router = new RailsThing.Routers.App
+
+    # piggies!!
+    piggyView = new RailsThing.Views.PiggyBank
     
     # testing wad
     wadView = new RailsThing.Views.WadIndex
