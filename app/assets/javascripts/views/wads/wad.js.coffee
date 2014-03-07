@@ -1,15 +1,17 @@
 class RailsThing.Views.Wad extends Backbone.View
 
-  el: '#content'
+  tagName: 'span'
 
   template: JST['wad/wad']
 
   initialize: ->
     _.bindAll
 
-    @model.bind 'change', 'render'
+    @model.bind 'change', @render
 
     @render()
 
   render: =>
-    $(@el).append @template( @model.attributes )
+    $(@el).html @template( @model.attributes )
+
+    @

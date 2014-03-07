@@ -4,12 +4,15 @@ window.RailsThing =
   Views: {}
   Routers: {}
   initialize: ->
+
+    # for now until we get the rails backend
+    Backbone.sync = (method, model, success, error) ->
+      success()
+
     app_router = new RailsThing.Routers.App
     
     # testing wad
-    wad = new RailsThing.Models.Wad( amount: 13.95 )
-
-    wadView = new RailsThing.Views.Wad( model: wad )
+    wadView = new RailsThing.Views.WadIndex
 
     # testing envelopes
     enView = new RailsThing.Views.EnvelopesIndex

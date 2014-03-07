@@ -1,3 +1,4 @@
 .money = context.amount
 .date = context.date
+button.collect Collect
 / TODO: make date also reflect the period by truncating it somehow...
