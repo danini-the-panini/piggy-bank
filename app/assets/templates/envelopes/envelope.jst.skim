@@ -1,0 +1,3 @@
+.money = context.amount
+.date = context.date
+/ TODO: make date also reflect the period by truncating it somehow...

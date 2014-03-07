@@ -3,7 +3,10 @@ window.RailsThing =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    app_router = new RailsThing.Routers.App
+
+    Backbone.history.start()
 
 $(document).ready ->
   RailsThing.initialize()
