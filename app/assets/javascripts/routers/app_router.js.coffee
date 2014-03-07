@@ -4,8 +4,13 @@ class RailsThing.Routers.App extends Backbone.Router
     '*actions': 'defaultRoute'
 
   defaultRoute: ->
-    index = new RailsThing.Views.EnvelopesIndex
+    enView = new RailsThing.Views.EnvelopesIndex
 
-    index.collection.add( new RailsThing.Models.Envelope( amount: 100 ))
-    index.collection.add( new RailsThing.Models.Envelope( amount: 120 ))
-    index.collection.add( new RailsThing.Models.Envelope( amount: 36.48 ))
+    enView.collection.add( new RailsThing.Models.Envelope( amount: 100 ))
+    enView.collection.add( new RailsThing.Models.Envelope( amount: 120 ))
+    enView.collection.add( new RailsThing.Models.Envelope( amount: 36.48 ))
+
+    payView = new RailsThing.Views.PaychecksIndex
+
+    payView.collection.add( new RailsThing.Models.Paycheck( amount: 4000 ))
+

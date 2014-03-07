@@ -13,13 +13,10 @@ class RailsThing.Views.EnvelopesIndex extends Backbone.View
     @render()
 
   render: =>
-    alert "render #{@el}"
-    alert @template()
-    $(@el).html( @template() )
-    alert $(@el).html()
+    $(@el).append( @template() )
     _.each @collection, (envelope) -> appendEnvelope envelope
 
   appendEnvelope: (envelope) =>
     enView = new RailsThing.Views.Envelope( model: envelope )
-    $('ul').append enView.render().el
+    $('ul.envelopes').append enView.render().el
 
