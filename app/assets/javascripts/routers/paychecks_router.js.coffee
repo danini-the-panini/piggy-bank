@@ -1,1 +1,1 @@
-class RailsThing.Routers.Paychecks extends Backbone.Router
+class RailsThing.Routers.Incomes extends Backbone.Router

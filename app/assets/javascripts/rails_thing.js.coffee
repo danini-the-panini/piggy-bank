@@ -21,10 +21,10 @@ window.RailsThing =
     enView.collection.add( new RailsThing.Models.Envelope( amount: 120 ))
     enView.collection.add( new RailsThing.Models.Envelope( amount: 36.48 ))
 
-    # testing paycheck(s)
-    payView = new RailsThing.Views.PaychecksIndex
+    # testing income(s)
+    inView = new RailsThing.Views.IncomesIndex
 
-    payView.collection.add( new RailsThing.Models.Paycheck( amount: 4000 ))
+    inView.collection.add( new RailsThing.Models.Income( amount: 4000 ))
 
     Backbone.history.start()
 

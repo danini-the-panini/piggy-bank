@@ -1,4 +1,4 @@
-class RailsThing.Models.Paycheck extends Backbone.Model
+class RailsThing.Models.Income extends Backbone.Model
 
   defaults: ->
     amount: 0

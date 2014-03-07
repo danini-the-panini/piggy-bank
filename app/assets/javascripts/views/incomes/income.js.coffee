@@ -1,8 +1,8 @@
-class RailsThing.Views.Paycheck extends Backbone.View
+class RailsThing.Views.Income extends Backbone.View
 
   tagName: 'li'
 
-  template: JST['paychecks/paycheck']
+  template: JST['incomes/income']
 
   initialize: ->
     _.bindAll
