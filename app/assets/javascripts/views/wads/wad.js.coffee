@@ -20,28 +20,15 @@ class RailsThing.Views.Wad extends RailsThing.View
     @doneSpending() if e.keyCode is 13
 
   spend: =>
-    $(@el).addClass('edit')
+    $(@el).addClass('spend')
     @$('input').focus()
 
   spendAll: =>
-    console.log 'spend all'
     @model.set('amount', 0)
-    $(@el).removeClass('edit')
+    $(@el).removeClass('spend')
 
   doneSpending: ->
-    if @doSpend(parseInt @$('input').val())
-      $(@el).removeClass('edit')
-    else
-      # do something?
-      alert "Invalid value"
-      @$('input').val(@model.get 'amount').focus()
-
-  doSpend: (amount) ->
-    if @model.get('amount') >= amount
-      @model.set('amount', @model.get('amount') - amount)
-      true
-    else
-      false
+    @doneSomething(window.wad, null, 'spend')
 
   events:
     'click .spend': 'spend'

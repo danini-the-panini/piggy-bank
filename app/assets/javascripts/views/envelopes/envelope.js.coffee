@@ -41,11 +41,11 @@ class RailsThing.Views.Envelope extends RailsThing.View
     @doneSomething(window.wad, @model, 'pay')
 
   emptyIntoWad: ->
-    @transferFromXtoY(@model, window.wad, @model.get('amount'))
+    @transfer(@model, window.wad, @model.get('amount'))
     # @model.destroy()
 
   emptyFromWad: ->
-    @transferFromXtoY(window.wad, @model, window.wad.get('amount'))
+    @transfer(window.wad, @model, window.wad.get('amount'))
 
   events:
     'click .empty': 'emptyIntoWad'
