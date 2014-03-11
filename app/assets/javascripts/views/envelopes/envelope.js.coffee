@@ -1,4 +1,4 @@
-class RailsThing.Views.Envelope extends Backbone.View
+class RailsThing.Views.Envelope extends RailsThing.View
 
   tagName: 'li'
 
@@ -21,35 +21,38 @@ class RailsThing.Views.Envelope extends Backbone.View
     $(@el).remove()
 
   collect: ->
-    $(@el).addClass('edit')
-    @$('input').focus()
+    $(@el).addClass('collect')
+    @$('.collect_input').focus()
+
+  pay: ->
+    $(@el).addClass('pay')
+    @$('.pay_input').focus()
 
   inputKeyPress: (e) ->
     @doneCollecting() if e.keyCode is 13
 
+  payKeyPress: (e) ->
+    @donePaying() if e.keyCode is 13
+
   doneCollecting: ->
-    if @transferIntoWad(parseInt @$('input').val())
-      $(@el).removeClass('edit')
-    else
-      # do something?
-      alert "Invalid value"
-      @$('input').val(@model.get 'amount').focus()
+    @doneSomething(@model, window.wad, 'collect')
+
+  donePaying: ->
+    @doneSomething(window.wad, @model, 'pay')
 
   emptyIntoWad: ->
-    window.wad.set 
-      amount: window.wad.get('amount') + @model.get('amount')
-    @model.destroy()
+    @transferFromXtoY(@model, window.wad, @model.get('amount'))
+    # @model.destroy()
 
-  transferIntoWad: (amount) ->
-    if @model.get('amount') >= amount
-      @model.set('amount', @model.get('amount') - amount)
-      window.wad.set('amount', window.wad.get('amount') + amount)
-      true
-    else
-      false
+  emptyFromWad: ->
+    @transferFromXtoY(window.wad, @model, window.wad.get('amount'))
 
   events:
     'click .empty': 'emptyIntoWad'
+    'click .pay_all': 'emptyFromWad'
     'click .collect': 'collect'
+    'click .pay': 'pay'
     'click .submit_collect': 'doneCollecting'
-    'keypress': 'inputKeyPress'
+    'click .submit_pay': 'donePaying'
+    'keypress .collect_input': 'inputKeyPress'
+    'keypress .pay_input': 'payKeyPress'

@@ -1,4 +1,4 @@
-class RailsThing.Views.PiggyBank extends Backbone.View
+class RailsThing.Views.PiggyBank extends RailsThing.View
 
     el: '.piggy'
 

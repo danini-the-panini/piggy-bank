@@ -1,4 +1,4 @@
-class RailsThing.Views.Wad extends Backbone.View
+class RailsThing.Views.Wad extends RailsThing.View
 
   tagName: 'span'
 
