@@ -1,0 +1,6 @@
+h3 Create Envelope
+form.envelope-form
+  input type="date" id="date"
+  input type="text" id="name" value="envelope"
+  input type="submit" value="Add"
+  input type="button" id="cancel" value="Cancel"

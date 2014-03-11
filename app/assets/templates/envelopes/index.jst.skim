@@ -1,2 +1,6 @@
 h2 Envelopes
+.create-buttons
+  | New Envelope: 
+  button.create-day Day
+.new-envelope
 ul.envelopes
