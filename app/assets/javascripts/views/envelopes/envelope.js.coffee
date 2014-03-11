@@ -10,6 +10,8 @@ class RailsThing.Views.Envelope extends Backbone.View
     @model.bind 'change', @render
     @model.bind 'remove', @unrender
 
+    window.wad.bind 'change', @render
+
   render: =>
     $(@el).html @template( @model.attributes )
 
@@ -32,7 +34,7 @@ class RailsThing.Views.Envelope extends Backbone.View
       $(@el).removeClass('edit')
     else
       # do something?
-      alert "Too Much Money!"
+      alert "Bad command or filename."
       @$('input').val(@model.get 'amount').focus()
 
   emptyIntoWad: ->

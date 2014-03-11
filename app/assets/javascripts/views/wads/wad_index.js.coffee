@@ -1,6 +1,6 @@
 class RailsThing.Views.WadIndex extends Backbone.View
 
-  el: '#content'
+  el: '.wad'
 
   initialize: ->
     _.bindAll
@@ -10,4 +10,4 @@ class RailsThing.Views.WadIndex extends Backbone.View
 
   render: =>
     wadView = new RailsThing.Views.Wad( model: window.wad )
-    $(@el).append wadView.render().el
+    $(@el).html wadView.render().el

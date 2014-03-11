@@ -2,3 +2,6 @@
   h2
     | Wad: 
     = context.amount
+    - if context.amount > 0
+      button.spend Spend
+      button.spend_all Spend All

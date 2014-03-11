@@ -1,6 +1,6 @@
 class RailsThing.Views.EnvelopesIndex extends Backbone.View
 
-  el: '#content'
+  el: '.envelopes'
 
   template: JST['envelopes/index']
 
@@ -13,7 +13,7 @@ class RailsThing.Views.EnvelopesIndex extends Backbone.View
     @render()
 
   render: =>
-    $(@el).append( @template() )
+    $(@el).html( @template() )
     _.each @collection, (envelope) -> appendEnvelope envelope
 
   appendEnvelope: (envelope) =>

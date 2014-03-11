@@ -1,6 +1,6 @@
 class RailsThing.Views.PiggyBank extends Backbone.View
 
-    el: '#content'
+    el: '.piggy'
 
     template: JST['piggy_bank/piggy_bank']
 
@@ -9,7 +9,9 @@ class RailsThing.Views.PiggyBank extends Backbone.View
 
       @model = new RailsThing.Models.PiggyBank
 
+      window.wad.bind 'change', @render
+
       @render()
 
     render: =>
-      $(@el).append @template( @model.attributes )
+      $(@el).html @template( @model.attributes )

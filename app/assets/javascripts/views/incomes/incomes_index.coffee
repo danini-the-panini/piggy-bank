@@ -1,6 +1,6 @@
 class RailsThing.Views.IncomesIndex extends Backbone.View
 
-  el: '#content'
+  el: '.incomes'
 
   template: JST['incomes/index']
 
@@ -13,7 +13,7 @@ class RailsThing.Views.IncomesIndex extends Backbone.View
     @render()
 
   render: =>
-    $(@el).append( @template() )
+    $(@el).html( @template() )
     _.each @collection, (income) -> appendIncome income
 
   appendIncome: (income) =>
