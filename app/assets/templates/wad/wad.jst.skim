@@ -7,4 +7,3 @@
       button.submit_spend Done
     - if context.amount > 0
       button.spend Spend
-      button.spend_all Spend All

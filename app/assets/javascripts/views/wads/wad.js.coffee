@@ -23,15 +23,10 @@ class RailsThing.Views.Wad extends RailsThing.View
     $(@el).addClass('spend')
     @$('input').focus()
 
-  spendAll: =>
-    @model.set('amount', 0)
-    $(@el).removeClass('spend')
-
   doneSpending: ->
     @doneSomething(window.wad, null, 'spend')
 
   events:
     'click .spend': 'spend'
-    'click .spend_all': 'spendAll'
     'click .submit_spend': 'doneSpending'
     'keypress': 'inputKeyPress'

@@ -37,16 +37,7 @@ class RailsThing.Views.PiggyBank extends RailsThing.View
   donePaying: ->
     @doneSomething(window.wad, @model, 'pay')
 
-  emptyIntoWad: ->
-    @transfer(@model, window.wad)
-    # @model.destroy()
-
-  emptyFromWad: ->
-    @transfer(window.wad, @model)
-
   events:
-    'click .empty': 'emptyIntoWad'
-    'click .pay_all': 'emptyFromWad'
     'click .collect': 'collect'
     'click .pay': 'pay'
     'click .submit_collect': 'doneCollecting'

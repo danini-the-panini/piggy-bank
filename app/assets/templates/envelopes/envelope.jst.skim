@@ -10,8 +10,6 @@
 .date = context.date
 - if context.amount > 0
   button.collect Collect
-  button.empty Empty
 - if window.wad.get('amount') > 0
   button.pay Pay
-  button.pay_all Pay All
 / TODO: make date also reflect the period by truncating it somehow...
