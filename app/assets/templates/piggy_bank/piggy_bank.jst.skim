@@ -3,11 +3,11 @@
     | Piggy: 
     .money = context.amount
     .money_collect
-      input class="collect_input" type="text" value="#{context.amount}"
+      input class="collect_input" type="text" value="#{context.amount}" data-default="#{context.amount}"
       button.submit_collect Done
     .money_pay
       | + 
-      input class="pay_input" type="text" value="#{window.wad.get('amount')}"
+      input class="pay_input" type="text" value="#{window.wad.get('amount')}" data-default="#{window.wad.get('amount')}"
       button.submit_pay Done
     - if context.amount > 0
       button.collect Collect

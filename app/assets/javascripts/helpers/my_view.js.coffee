@@ -7,7 +7,7 @@ class RailsThing.View extends Backbone.View
     else
       # do something?
       alert "Invalid value"
-      inputEl.val(@model.get 'amount').focus()
+      inputEl.val(inputEl.attr('data-default')).focus()
 
   transfer: (x, y, amount) ->
     amount ?= x.get('amount')
