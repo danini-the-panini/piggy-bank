@@ -10,6 +10,7 @@ class RailsThing.View extends Backbone.View
       inputEl.val(@model.get 'amount').focus()
 
   transfer: (x, y, amount) ->
+    amount ?= x.get('amount')
     if x?
       if @take(x, amount)
         @give y, amount
