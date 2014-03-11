@@ -22,6 +22,11 @@ class RailsThing.Views.Envelope extends Backbone.View
     $(@el).addClass('edit')
     @$('input').focus()
 
+  inputKeyPress: (e) ->
+    switch e.keyCode
+      when 13
+        @doneCollecting()
+
   doneCollecting: ->
     if @transferIntoWad(parseInt @$('input').val())
       $(@el).removeClass('edit')
@@ -47,3 +52,4 @@ class RailsThing.Views.Envelope extends Backbone.View
     'click .empty': 'emptyIntoWad'
     'click .collect': 'collect'
     'click .submit_collect': 'doneCollecting'
+    'keypress': 'inputKeyPress'
