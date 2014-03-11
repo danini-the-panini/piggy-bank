@@ -25,16 +25,14 @@ class RailsThing.Views.Envelope extends Backbone.View
     @$('input').focus()
 
   inputKeyPress: (e) ->
-    switch e.keyCode
-      when 13
-        @doneCollecting()
+    @doneCollecting() if e.keyCode is 13
 
   doneCollecting: ->
     if @transferIntoWad(parseInt @$('input').val())
       $(@el).removeClass('edit')
     else
       # do something?
-      alert "Bad command or filename."
+      alert "Invalid value"
       @$('input').val(@model.get 'amount').focus()
 
   emptyIntoWad: ->

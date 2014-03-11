@@ -1,0 +1,27 @@
+
+div
+{
+  .money
+  {
+    display: block;
+  }
+
+  .money_edit
+  {
+    display: none;
+  }
+}
+
+.edit
+{
+
+  .money
+  {
+    display: none;
+  }
+
+  .money_edit
+  {
+    display: block;
+  }
+}

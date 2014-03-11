@@ -1,7 +1,12 @@
 .piggy
   h2
     | Piggy: 
-    = context.amount
+    .money = context.amount
+    .money_edit
+      input type="text" value="#{context.amount}"
+      button.submit_pay Done
+    - if context.amount > 0
+      button.collect Collect
     - if window.wad.get('amount')
       button.pay Pay
       button.pay_all Pay All

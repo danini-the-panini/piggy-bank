@@ -1,7 +1,10 @@
 .wad
   h2
     | Wad: 
-    = context.amount
+    .money = context.amount
+    .money_edit
+      input type="text" value="#{context.amount}"
+      button.submit_spend Done
     - if context.amount > 0
       button.spend Spend
       button.spend_all Spend All
