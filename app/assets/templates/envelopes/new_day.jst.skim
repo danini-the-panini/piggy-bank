@@ -1,5 +1,5 @@
 h3 Create Envelope
-- amount_value = window.wad.get('amount')
+- amount_value = toRands window.wad.get('amount')
 input type="text" id="name" value="envelope"
 input type="number" id="amount" value="#{amount_value}" data-default="#{amount_value}"
 input type="date" id="date" value="#{moment().format('YYYY/MM/DD')}"

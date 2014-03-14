@@ -1,9 +1,10 @@
+- amount = toRands context.amount
 .wad
   h2
     | Wad: 
-    .money = context.amount
+    .money = amount
     .money_spend
-      input class="spend_input" type="text" value="#{context.amount}" data-default="#{context.amount}"
+      input class="spend_input" type="text" value="#{amount}" data-default="#{amount}"
       button.submit_spend Done
     - if context.amount > 0
       button.spend Spend

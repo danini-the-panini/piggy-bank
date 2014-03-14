@@ -13,7 +13,7 @@ class RailsThing.View extends Backbone.View
       false
 
   doneSomethingEL: (x, y, el) ->
-    if @transfer(x, y, parseFloat el.val())
+    if @transfer(x, y, parseRands el.val())
       true
     else
       # do something?

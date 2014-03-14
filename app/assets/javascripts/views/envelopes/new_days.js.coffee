@@ -18,7 +18,7 @@ class RailsThing.Views.NewDays extends RailsThing.View
 
   submit: ->
 
-    amount = parseFloat @$('#amount').val()
+    amount = parseRands @$('#amount').val()
     if @take(window.wad, amount)
 
       a = moment(@$('#from').val(), "YYYY/MM/DD")

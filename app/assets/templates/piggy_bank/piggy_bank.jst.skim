@@ -1,13 +1,15 @@
+- amount = toRands context.amount
+- wad_amount = toRands window.wad.get('amount')
 .piggy
   h2
     | Piggy: 
-    .money = context.amount
+    .money = amount
     .money_collect
-      input class="collect_input" type="text" value="#{context.amount}" data-default="#{context.amount}"
+      input class="collect_input" type="text" value="#{amount}" data-default="#{amount}"
       button.submit_collect Done
     .money_pay
       | + 
-      input class="pay_input" type="text" value="#{window.wad.get('amount')}" data-default="#{window.wad.get('amount')}"
+      input class="pay_input" type="text" value="#{wad_amount}" data-default="#{wad_amount}"
       button.submit_pay Done
     - if context.amount > 0
       button.collect Collect

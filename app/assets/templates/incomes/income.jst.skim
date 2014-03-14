@@ -1,4 +1,4 @@
-.amount = context.amount
+.amount = toRands context.amount
 .lastPayed
   em Last Payed:
   = context.lastPayed
