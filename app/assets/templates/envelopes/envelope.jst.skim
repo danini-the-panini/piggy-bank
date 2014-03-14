@@ -14,4 +14,5 @@
   button.collect Collect
 - if window.wad.get('amount') > 0
   button.pay Pay
+button.delete Delete
 / TODO: make date also reflect the period by truncating it somehow...

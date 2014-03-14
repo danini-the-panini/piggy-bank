@@ -40,10 +40,16 @@ class RailsThing.Views.Envelope extends RailsThing.View
   donePaying: ->
     @doneSomething(window.wad, @model, 'pay')
 
+  removeSafely: ->
+    @transfer(@model, window.wad)
+
+    @model.destroy()
+
   events:
     'click .collect': 'collect'
     'click .pay': 'pay'
     'click .submit_collect': 'doneCollecting'
     'click .submit_pay': 'donePaying'
+    'click .delete': 'removeSafely'
     'keypress .collect_input': 'inputKeyPress'
     'keypress .pay_input': 'payKeyPress'
