@@ -1,0 +1,8 @@
+h3 Create Envelopes
+- amount_value = window.wad.get('amount')
+input type="text" id="name" value="envelope"
+input type="number" id="amount" value="#{amount_value}" data-default="#{amount_value}"
+input type="date" id="from" value="#{moment().format('YYYY/MM/DD')}"
+input type="date" id="until" value="#{moment().add('M',1).format('YYYY/MM/DD')}"
+button id="add" Add
+button id="cancel" Cancel

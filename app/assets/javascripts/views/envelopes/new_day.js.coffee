@@ -19,7 +19,7 @@ class RailsThing.Views.NewDay extends RailsThing.View
   submit: ->
     envelope = new RailsThing.Models.Envelope
       name: @$('#name').val()
-      date: new Date(moment().format(@$('#date').val(), "YYYY/MM/DD"))
+      date: moment(@$('#date').val(), "YYYY/MM/DD").toDate()
       period: 'day'
 
     if @doneSomethingEL(window.wad, envelope, @$('#amount'))
