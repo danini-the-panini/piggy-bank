@@ -28,7 +28,7 @@ class RailsThing.Views.EnvelopesIndex extends RailsThing.View
 
   createDays: ->
     @$('.create-buttons').addClass('hidden')
-    daysView = new RailsThing.Views.NewDays { collection: @collection}
+    newView = new RailsThing.Views.NewDays { collection: @collection}
     @$('.new-envelope').html newView.render().el
     @$('.new-envelope #name').focus();
 
