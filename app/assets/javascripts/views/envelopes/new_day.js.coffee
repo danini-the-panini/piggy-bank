@@ -1,4 +1,4 @@
-class RailsThing.Views.NewDay extends Backbone.View
+class RailsThing.Views.NewDay extends RailsThing.View
 
   template: JST['envelopes/new_day']
 
@@ -17,10 +17,14 @@ class RailsThing.Views.NewDay extends Backbone.View
     $(@el).remove()
 
   submit: ->
-    @collection.add new RailsThing.Models.Envelope
+    envelope = new RailsThing.Models.Envelope
       name: @$('#name').val()
       date: new Date(moment().format(@$('#date').val(), "YYYY/MM/DD"))
       period: 'day'
+
+    @transfer(window.wad, envelope)
+      
+    @collection.add envelope
     @unrender()
 
   keypress: (e) ->

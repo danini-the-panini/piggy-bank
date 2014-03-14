@@ -1,4 +1,4 @@
-class RailsThing.Views.EnvelopesIndex extends Backbone.View
+class RailsThing.Views.EnvelopesIndex extends RailsThing.View
 
   el: '.envelopes'
 
