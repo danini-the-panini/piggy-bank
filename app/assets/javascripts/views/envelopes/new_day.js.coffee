@@ -24,9 +24,11 @@ class RailsThing.Views.NewDay extends Backbone.View
     @unrender()
 
   keypress: (e) ->
-    @submit() if e.keyCode is 13
+    switch e.keyCode
+      when 13 then @submit()
+      when 27 then @unrender()
 
   events:
     'click #cancel': 'unrender'
     'click #add': 'submit'
-    'keypress input': 'keypress'
+    'keyup input': 'keypress'

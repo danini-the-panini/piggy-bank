@@ -24,6 +24,7 @@ class RailsThing.Views.EnvelopesIndex extends Backbone.View
     @$('.create-buttons').addClass('hidden')
     dayView = new RailsThing.Views.NewDay { collection: @collection}
     @$('.new-envelope').html dayView.render().el
+    @$('.new-envelope #name').focus();
 
   events:
     'click .create-day': 'createDay'
