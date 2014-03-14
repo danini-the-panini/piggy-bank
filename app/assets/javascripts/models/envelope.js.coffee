@@ -5,3 +5,7 @@ class RailsThing.Models.Envelope extends Backbone.Model
     amount: 0
     date: new Date
     period: 'day'
+
+  initialize: ->
+
+    @set(date: moment(@get('date')).startOf(@get('period')).toDate())
