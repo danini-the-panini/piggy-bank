@@ -22,16 +22,15 @@ class RailsThing.Views.NewDays extends RailsThing.View
     if @take(window.wad, amount)
 
       a = moment(@$('#from').val(), "YYYY/MM/DD")
-      console.log a
       b = moment(@$('#until').val(), "YYYY/MM/DD")
-      console.log b
       [a,b] = [b,a] if b.isBefore(a)
       days = b.diff(a,'days')
-      console.log days
-      day_amount = amount/days
+      day_amount = Math.floor(amount/days)
+      day_residual = amount % days
 
-      console.log day_amount
+      console.log "#{day_amount}, #{day_residual}"
 
+      envelope = 0
       while a.isBefore(b)
 
         envelope = new RailsThing.Models.Envelope
@@ -43,6 +42,8 @@ class RailsThing.Views.NewDays extends RailsThing.View
         @collection.add envelope
 
         a.add('days', 1)
+
+      envelope.set('amount', envelope.get('amount') + day_residual)
 
       @unrender()
 
