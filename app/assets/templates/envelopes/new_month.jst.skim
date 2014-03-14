@@ -1,0 +1,7 @@
+h3 Create Month Envelope
+- amount_value = toRands window.wad.get('amount')
+input type="text" id="name" value="envelope"
+input type="number" id="amount" value="#{amount_value}" data-default="#{amount_value}"
+input type="month" id="date" value="#{moment().format('YYYY/MM')}"
+button id="add" Add
+button id="cancel" Cancel

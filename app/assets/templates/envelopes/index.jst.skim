@@ -3,5 +3,6 @@ h2 Envelopes
   | New Envelope: 
   button.create-day Day
   button.create-days Days
+  button.create-month Month
 .new-envelope
 ul.envelopes

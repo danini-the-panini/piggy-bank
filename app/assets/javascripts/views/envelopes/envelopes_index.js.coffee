@@ -22,16 +22,23 @@ class RailsThing.Views.EnvelopesIndex extends RailsThing.View
 
   createDay: ->
     @$('.create-buttons').addClass('hidden')
-    dayView = new RailsThing.Views.NewDay { collection: @collection}
-    @$('.new-envelope').html dayView.render().el
+    newView = new RailsThing.Views.NewDay { collection: @collection}
+    @$('.new-envelope').html newView.render().el
     @$('.new-envelope #name').focus();
 
   createDays: ->
     @$('.create-buttons').addClass('hidden')
-    dayView = new RailsThing.Views.NewDays { collection: @collection}
-    @$('.new-envelope').html dayView.render().el
+    daysView = new RailsThing.Views.NewDays { collection: @collection}
+    @$('.new-envelope').html newView.render().el
+    @$('.new-envelope #name').focus();
+
+  createMonth: ->
+    @$('.create-buttons').addClass('hidden')
+    newView = new RailsThing.Views.NewMonth { collection: @collection}
+    @$('.new-envelope').html newView.render().el
     @$('.new-envelope #name').focus();
 
   events:
     'click .create-day': 'createDay'
     'click .create-days': 'createDays'
+    'click .create-month': 'createMonth'
