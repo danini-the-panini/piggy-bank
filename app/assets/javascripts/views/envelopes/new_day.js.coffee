@@ -23,6 +23,10 @@ class RailsThing.Views.NewDay extends Backbone.View
       period: 'day'
     @unrender()
 
+  keypress: (e) ->
+    @submit() if e.keyCode is 13
+
   events:
     'click #cancel': 'unrender'
     'click #add': 'submit'
+    'keypress input': 'keypress'
