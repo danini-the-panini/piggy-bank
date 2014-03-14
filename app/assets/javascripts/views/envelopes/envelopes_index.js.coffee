@@ -8,17 +8,15 @@ class RailsThing.Views.EnvelopesIndex extends RailsThing.View
     _.bindAll
 
     @collection = new RailsThing.Collections.Envelopes
-    @collection.bind 'add', @appendEnvelope, @
+    @collection.bind 'add', @render
 
     @render()
 
   render: =>
     $(@el).html( @template() )
-    _.each @collection, (envelope) -> appendEnvelope envelope
-
-  appendEnvelope: (envelope) =>
-    enView = new RailsThing.Views.Envelope( model: envelope )
-    $('ul.envelopes').append enView.render().el
+    @collection.forEach (envelope) ->
+      enView = new RailsThing.Views.Envelope( model: envelope )
+      $('ul.envelopes').append enView.render().el
 
   createDay: ->
     @$('.create-buttons').addClass('hidden')
