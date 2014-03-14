@@ -10,6 +10,7 @@ gem 'pg'
 gem 'backbone-on-rails'
 gem 'skim'
 gem 'slim-rails'
+gem 'momentjs-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

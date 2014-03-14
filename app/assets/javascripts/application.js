@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require moment
 //= require rails_thing
 //= require_tree ./helpers
 //= require_tree ../templates

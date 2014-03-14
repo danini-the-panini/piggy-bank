@@ -16,13 +16,13 @@ class RailsThing.Views.NewDay extends Backbone.View
     $('.create-buttons').removeClass('hidden')
     $(@el).remove()
 
-  submit: (event) ->
-    @collection.add new Envelope
+  submit: ->
+    @collection.add new RailsThing.Models.Envelope
       name: @$('#name').val()
-      date: new Date(@$('#date').val)
+      date: new Date(moment().format(@$('#date').val(), "YYYY/MM/DD"))
       period: 'day'
     @unrender()
 
   events:
     'click #cancel': 'unrender'
-    'submit .envelope-form': 'submit'
+    'click #add': 'submit'
