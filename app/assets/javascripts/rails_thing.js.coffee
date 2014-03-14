@@ -22,14 +22,22 @@ window.RailsThing =
     # testing envelopes
     enView = new RailsThing.Views.EnvelopesIndex
 
-    enView.collection.add( new RailsThing.Models.Envelope( amount: 10000 ))
-    enView.collection.add( new RailsThing.Models.Envelope( amount: 12000 ))
-    enView.collection.add( new RailsThing.Models.Envelope( amount: 3648 ))
+    enView.collection.add(
+      new RailsThing.Models.Envelope( name: 'daily', amount: 10000, date: moment().toDate() ))
+    enView.collection.add(
+      new RailsThing.Models.Envelope( name: 'daily', amount: 12000, date: moment().add('d',1).toDate() ))
+    enView.collection.add(
+      new RailsThing.Models.Envelope( name: 'daily', amount: 3648, date: moment().add('d',2).toDate() ))
+
+    enView.collection.add(
+      new RailsThing.Models.Envelope( name: 'paycheck', amount: 400000, date: moment().toDate() ))
 
     # testing income(s)
     inView = new RailsThing.Views.IncomesIndex
 
     inView.collection.add( new RailsThing.Models.Income( amount: 400000 ))
+
+    # NB: values are represented in cents
 
     Backbone.history.start()
 
