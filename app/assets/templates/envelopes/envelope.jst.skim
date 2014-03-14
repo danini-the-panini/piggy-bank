@@ -9,7 +9,7 @@
   | + 
   input class="pay_input" type="text" value="#{wad_amount}" data-default="#{wad_amount}"
   button.submit_pay Done
-.date = context.date
+.date = truncateDate(context.date, context.period)
 - if context.amount > 0
   button.collect Collect
 - if window.wad.get('amount') > 0
