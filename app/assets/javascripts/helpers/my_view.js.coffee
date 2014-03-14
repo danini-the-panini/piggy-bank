@@ -1,13 +1,24 @@
 class RailsThing.View extends Backbone.View
 
+  inputError: (el) ->
+    alert "Invalid value"
+    el.val(el.attr('data-default')).focus()
+
   doneSomething: (x, y, input) ->
     inputEl = @$(".#{input}_input")
-    if @transfer(x, y, parseFloat inputEl.val())
+    if @doneSomethingEL x, y, inputEl
       $(@el).removeClass(input)
+      true
+    else
+      false
+
+  doneSomethingEL: (x, y, el) ->
+    if @transfer(x, y, parseFloat el.val())
+      true
     else
       # do something?
-      alert "Invalid value"
-      inputEl.val(inputEl.attr('data-default')).focus()
+      @inputError el
+      false
 
   transfer: (x, y, amount) ->
     amount ?= x.get('amount')

@@ -22,10 +22,9 @@ class RailsThing.Views.NewDay extends RailsThing.View
       date: new Date(moment().format(@$('#date').val(), "YYYY/MM/DD"))
       period: 'day'
 
-    @transfer(window.wad, envelope)
-      
-    @collection.add envelope
-    @unrender()
+    if @doneSomethingEL(window.wad, envelope, @$('#amount'))
+      @collection.add envelope
+      @unrender()
 
   keypress: (e) ->
     switch e.keyCode
