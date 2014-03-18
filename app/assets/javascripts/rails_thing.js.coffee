@@ -29,13 +29,15 @@ window.RailsThing =
     enView.collection.add(
       new RailsThing.Models.Envelope( name: 'daily', amount: 3648, date: moment().add('d',2).toDate() ))
 
+    payday = moment().subtract('d',20).toDate()
+
     enView.collection.add(
-      new RailsThing.Models.Envelope( name: 'paycheck', amount: 400000, date: moment().toDate(), period: 'month' ))
+      new RailsThing.Models.Envelope( name: 'paycheck', amount: 400000, date: payday))
 
     # testing income(s)
     inView = new RailsThing.Views.IncomesIndex
 
-    inView.collection.add( new RailsThing.Models.Income( amount: 400000 ))
+    inView.collection.add( new RailsThing.Models.Income( amount: 400000, lastPayed: payday ))
 
     # NB: values are represented in cents
 
