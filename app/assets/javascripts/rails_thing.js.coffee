@@ -35,7 +35,7 @@ window.RailsThing =
       new RailsThing.Models.Envelope( name: 'paycheck', amount: 400000, date: payday))
 
     # testing income(s)
-    inView = new RailsThing.Views.IncomesIndex
+    inView = new RailsThing.Views.IncomesIndex enView.envelopes()
 
     inView.collection.add( new RailsThing.Models.Income( amount: 400000, lastPayed: payday ))
 

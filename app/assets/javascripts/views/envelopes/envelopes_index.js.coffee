@@ -36,6 +36,9 @@ class RailsThing.Views.EnvelopesIndex extends RailsThing.View
     @$('.new-envelope').html newView.render().el
     @$('.new-envelope #name').focus();
 
+  envelopes: ->
+    @collection
+
   events:
     'click .create-day': 'createDay'
     'click .create-days': 'createDays'

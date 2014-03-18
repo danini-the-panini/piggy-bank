@@ -4,8 +4,10 @@ class RailsThing.Views.IncomesIndex extends Backbone.View
 
   template: JST['incomes/index']
 
-  initialize: ->
+  initialize: (envelopes) ->
     _.bindAll
+
+    @envelopes = envelopes
 
     @collection = new RailsThing.Collections.Incomes
     @collection.bind 'add', @appendIncome, @
@@ -20,15 +22,16 @@ class RailsThing.Views.IncomesIndex extends Backbone.View
     view = new RailsThing.Views.Income( model: income )
     $('ul.incomes').append view.render().el
 
-  createOnceOff: ->
+  createOnceOff: =>
     @$('.create-buttons').addClass('hidden')
-    newView = new RailsThing.Views.NewOnceOff { collection: @collection}
+    newView = new RailsThing.Views.NewOnceOff {envelopes: @envelopes, collection: @collection }
+
     @$('.new-income').html newView.render().el
     @$('.new-income #name').focus();
 
   createSalary: ->
     @$('.create-buttons').addClass('hidden')
-    newView = new RailsThing.Views.NewSalary { collection: @collection}
+    newView = new RailsThing.Views.NewSalary { collection: @collection }
     @$('.new-income').html newView.render().el
     @$('.new-income #name').focus();
 
