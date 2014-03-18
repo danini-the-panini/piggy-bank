@@ -28,11 +28,19 @@ class RailsThing.Views.Envelope extends RailsThing.View
     $(@el).addClass('pay')
     @$('.pay_input').focus()
 
-  inputKeyPress: (e) ->
+  cancelPay: ->
+    $(@el).removeClass('pay')
+
+  cancelCollect: ->
+    $(@el).removeClass('collect')
+
+  collectKeyPress: (e) ->
     @doneCollecting() if e.keyCode is 13
+    @cancelCollect() if e.keyCode is 27
 
   payKeyPress: (e) ->
     @donePaying() if e.keyCode is 13
+    @cancelPay if e.keyCode is 27
 
   doneCollecting: ->
     @doneSomething(@model, window.wad, 'collect')
@@ -48,8 +56,10 @@ class RailsThing.Views.Envelope extends RailsThing.View
   events:
     'click .collect': 'collect'
     'click .pay': 'pay'
+    'click .cancel_pay': 'cancelPay'
+    'click .cancel_collect': 'cancelCollect'
     'click .submit_collect': 'doneCollecting'
     'click .submit_pay': 'donePaying'
     'click .delete': 'removeSafely'
-    'keypress .collect_input': 'inputKeyPress'
-    'keypress .pay_input': 'payKeyPress'
+    'keyup .collect_input': 'collectKeyPress'
+    'keyup .pay_input': 'payKeyPress'

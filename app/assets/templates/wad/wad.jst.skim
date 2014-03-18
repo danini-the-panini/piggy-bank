@@ -6,5 +6,6 @@
     .money_spend
       input class="spend_input" type="text" value="#{amount}" data-default="#{amount}"
       button.submit_spend Done
+      button.cancel_spend Cancel
     - if context.amount > 0
       button.spend Spend

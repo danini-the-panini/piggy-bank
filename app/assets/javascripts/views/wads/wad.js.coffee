@@ -16,12 +16,16 @@ class RailsThing.Views.Wad extends RailsThing.View
 
     @
 
-  inputKeyPress: (e) ->
+  spendKeyPress: (e) ->
     @doneSpending() if e.keyCode is 13
+    @cancelSpend() if e.keyCode is 27
 
   spend: =>
     $(@el).addClass('spend')
     @$('input').focus()
+
+  cancelSpend: ->
+    $(@el).removeClass('spend')
 
   doneSpending: ->
     @doneSomething(window.wad, null, 'spend')
@@ -29,4 +33,5 @@ class RailsThing.Views.Wad extends RailsThing.View
   events:
     'click .spend': 'spend'
     'click .submit_spend': 'doneSpending'
-    'keypress': 'inputKeyPress'
+    'click .cancel_spend': 'cancelSpend'
+    'keyup': 'spendKeyPress'
