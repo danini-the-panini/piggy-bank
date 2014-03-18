@@ -1,4 +1,10 @@
+.name = context.name
 .amount = toRands context.amount
-.lastPayed
-  em Last Payed: 
+.period
+  - if context.auto
+    | #{context.period}ly
+  - else
+    | Once-off
+.payed
+  em Payed: 
   = moment(context.lastPayed).startOf('day').calendar()
