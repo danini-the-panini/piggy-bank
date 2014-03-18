@@ -1,0 +1,5 @@
+h3 Create Once-off Income
+input type="text" id="name" value="income"
+input type="number" id="amount" value="0" data-default="0"
+button id="add" Add
+button id="cancel" Cancel

@@ -1,2 +1,7 @@
 h2 Incomes
+.create-buttons
+  | New Income: 
+  button.create-once-off Once-off
+  button.create-salary Salary
+.new-income
 ul.incomes

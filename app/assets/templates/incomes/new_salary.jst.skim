@@ -1,0 +1,10 @@
+h3 Create Salary
+input type="text" id="name" value="salary"
+input type="number" id="amount" value="0" data-default="0"
+input type="date" id="date" value="#{moment().format('YYYY/MM/DD')}"
+select id="period"
+  option value="day" Day
+  option value="month" Month
+  option value="year" Year
+button id="add" Add
+button id="cancel" Cancel
