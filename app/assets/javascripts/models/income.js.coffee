@@ -1,6 +1,7 @@
 class RailsThing.Models.Income extends Backbone.Model
 
   defaults: ->
+    name: 'income'
     amount: 0
     lastPayed: new Date
     auto: false

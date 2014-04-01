@@ -8,3 +8,6 @@
 .payed
   em Payed: 
   = moment(context.lastPayed).startOf('day').calendar()
+- if moment().subtract(context.period,1).isAfter(context.lastPayed)
+  .collect
+    button id="collect_income" Collect

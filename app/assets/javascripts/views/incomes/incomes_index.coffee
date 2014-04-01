@@ -19,12 +19,12 @@ class RailsThing.Views.IncomesIndex extends Backbone.View
     _.each @collection, (income) -> appendIncome income
 
   appendIncome: (income) =>
-    view = new RailsThing.Views.Income( model: income )
+    view = new RailsThing.Views.Income { envelopes: @envelopes, model: income }
     $('ul.incomes').append view.render().el
 
   createOnceOff: =>
     @$('.create-buttons').addClass('hidden')
-    newView = new RailsThing.Views.NewOnceOff {envelopes: @envelopes, collection: @collection }
+    newView = new RailsThing.Views.NewOnceOff { envelopes: @envelopes, collection: @collection }
 
     @$('.new-income').html newView.render().el
     @$('.new-income #name').focus();
