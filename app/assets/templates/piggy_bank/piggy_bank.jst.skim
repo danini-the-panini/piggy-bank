@@ -1,19 +1,18 @@
 - amount = toRands context.amount
 - wad_amount = toRands window.wad.get('amount')
-.piggy
-  h2
-    | Piggy: 
-    .money = amount
-    .money_collect
-      input class="collect_input" type="text" value="#{amount}" data-default="#{amount}"
-      button.submit_collect Done
-      button.cancel_collect Cancel
-    .money_pay
-      | + 
-      input class="pay_input" type="text" value="#{wad_amount}" data-default="#{wad_amount}"
-      button.submit_pay Done
-      button.cancel_pay Cancel
-    - if context.amount > 0
-      button.collect Collect
-    - if window.wad.get('amount')
-      button.pay Pay
+h2
+  | Piggy: 
+  .money = amount
+  .money_collect
+    input class="collect_input" type="text" value="#{amount}" data-default="#{amount}"
+    button.submit_collect Done
+    button.cancel_collect Cancel
+  .money_pay
+    |  + 
+    input class="pay_input" type="text" value="#{wad_amount}" data-default="#{wad_amount}"
+    button.submit_pay Done
+    button.cancel_pay Cancel
+  - if context.amount > 0
+    button.collect Collect
+  - if window.wad.get('amount')
+    button.pay Pay

@@ -6,6 +6,8 @@ class RailsThing.Views.WadIndex extends Backbone.View
     _.bindAll
     window.wad = new RailsThing.Models.Wad
 
+    window.wad.bind 'change', @render
+
     @render()
 
   render: =>

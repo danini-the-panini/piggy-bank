@@ -16,6 +16,8 @@ window.RailsThing =
     # testing wad
     wadView = new RailsThing.Views.WadIndex
 
+    window.wad.set("amount": 10000);
+
     # piggies!!
     piggyView = new RailsThing.Views.PiggyBank
 

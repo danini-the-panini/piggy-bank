@@ -1,4 +1,4 @@
-.piggy
-.wad
-.envelopes
-.incomes
+.wad class="section"
+.piggy class="section"
+.envelopes class="section"
+.incomes class="section"

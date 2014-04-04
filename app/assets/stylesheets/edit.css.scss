@@ -3,7 +3,7 @@ div
 {
   .money
   {
-    display: block;
+    display: inline;
   }
 
   .money_collect, .money_pay, .money_spend
@@ -22,7 +22,7 @@ div
 
   .money_collect, .money_spend
   {
-    display: block;
+    display: inline;
   }
 }
 
@@ -31,6 +31,6 @@ div
 
   .money_pay
   {
-    display: block;
+    display: inline;
   }
 }
